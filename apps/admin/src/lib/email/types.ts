@@ -26,3 +26,10 @@ export interface InvitationEmailParams {
   inviterEmail?: string;
   inviteLink: string;
 }
+
+export interface RewardEmailParams {
+  storeName: string;
+  amount: number;
+  tokenString: string;
+  qrCodeUrl: string;
+}

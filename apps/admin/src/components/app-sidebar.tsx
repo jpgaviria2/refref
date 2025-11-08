@@ -9,6 +9,7 @@ import {
   IconListDetails,
   IconSettings,
   IconUsers,
+  IconWallet,
 } from "@tabler/icons-react";
 import { FaDiscord } from "react-icons/fa6";
 import Image from "next/image";
@@ -47,6 +48,11 @@ const data = {
       title: "Rewards",
       url: "/rewards",
       icon: IconAward,
+    },
+    {
+      title: "Wallet",
+      url: "/wallet/setup",
+      icon: IconWallet,
     },
     {
       title: "Analytics",

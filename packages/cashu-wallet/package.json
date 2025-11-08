@@ -1,0 +1,35 @@
+{
+  "name": "@refref/cashu-wallet",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "lint": "eslint . --max-warnings 0",
+    "check-types": "tsc --noEmit"
+  },
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    }
+  },
+  "devDependencies": {
+    "@refref/eslint-config": "workspace:*",
+    "@refref/typescript-config": "workspace:*",
+    "@types/node": "^24.3.0",
+    "typescript": "5.9.2"
+  },
+  "dependencies": {
+    "@cashu/cashu-ts": "^2.7.1",
+    "@cashu/crypto": "^0.3.4",
+    "@scure/bip39": "^1.4.0",
+    "@vueuse/core": "^10.9.0",
+    "dexie": "^4.0.9",
+    "zod": "^4.0.17"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  }
+}
+

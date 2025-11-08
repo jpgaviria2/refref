@@ -12,6 +12,9 @@ import { userRouter } from "@/server/api/routers/user";
 import { projectMembersRouter } from "@/server/api/routers/project-members";
 import { searchRouter } from "@/server/api/routers/search";
 import { analyticsRouter } from "@/server/api/routers/analytics";
+import { walletRouter } from "@/server/api/routers/wallet";
+import { storeSettingsRouter } from "@/server/api/routers/storeSettings";
+import { rewardsMvpRouter } from "@/server/api/routers/rewards-mvp";
 import { createCallerFactory, createTRPCRouter } from "@/server/api/trpc";
 
 /**
@@ -34,6 +37,9 @@ export const appRouter = createTRPCRouter({
   projectMembers: projectMembersRouter,
   search: searchRouter,
   analytics: analyticsRouter,
+  wallet: walletRouter,
+  storeSettings: storeSettingsRouter,
+  rewardsMvp: rewardsMvpRouter,
 });
 
 // export type definition of API

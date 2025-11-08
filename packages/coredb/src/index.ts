@@ -45,3 +45,4 @@ export type DBType = ReturnType<typeof createDb>;
 
 // Export schema for direct imports
 export * as schema from "./schema";
+export { mvpDb } from "./mvp-db";

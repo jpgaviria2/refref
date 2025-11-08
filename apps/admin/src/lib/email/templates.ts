@@ -1,4 +1,4 @@
-import type { MagicLinkEmailParams, InvitationEmailParams } from "./types";
+import type { MagicLinkEmailParams, InvitationEmailParams, RewardEmailParams } from "./types";
 
 export const magicLinkTemplate = ({ url }: MagicLinkEmailParams): string => {
   return `
@@ -204,6 +204,90 @@ export const invitationTemplate = ({
               <p><strong>This invitation will expire in 7 days.</strong></p>
               <p>If you didn't expect this invitation, you can safely ignore this email. No action will be taken.</p>
               <p>This is an automated message from RefRef. Please do not reply to this email.</p>
+            </div>
+          </div>
+        </div>
+      </body>
+    </html>
+  `;
+};
+
+export const rewardTemplate = ({ storeName, amount, tokenString, qrCodeUrl }: RewardEmailParams): string => {
+  return `
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+          body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9fafb;
+          }
+          .container {
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 20px;
+          }
+          .card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+          }
+          .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+          }
+          .content {
+            padding: 30px;
+          }
+          .amount {
+            font-size: 48px;
+            font-weight: bold;
+            color: #1f2937;
+            text-align: center;
+            margin: 20px 0;
+          }
+          .qr-code {
+            text-align: center;
+            margin: 20px 0;
+          }
+          .qr-code img {
+            max-width: 200px;
+            height: auto;
+          }
+          .footer {
+            background: #f9fafb;
+            padding: 20px 30px;
+            font-size: 14px;
+            color: #6b7280;
+            text-align: center;
+          }
+        </style>
+      </head>
+      <body>
+        <div class="container">
+          <div class="card">
+            <div class="header">
+              <h1>🎉 Congratulations!</h1>
+              <p>You've earned e-cash from ${storeName}</p>
+            </div>
+            <div class="content">
+              <h2 class="amount">${amount} sats</h2>
+              <p>Scan the QR code below with a Cashu wallet to redeem your reward:</p>
+              <div class="qr-code">
+                <img src="${qrCodeUrl}" alt="Cashu Token QR Code" />
+              </div>
+              <p><strong>Token:</strong> ${tokenString}</p>
+              <p>Use this token in any Cashu-compatible wallet.</p>
+            </div>
+            <div class="footer">
+              <p>This is an automated reward from ${storeName}. Enjoy!</p>
             </div>
           </div>
         </div>

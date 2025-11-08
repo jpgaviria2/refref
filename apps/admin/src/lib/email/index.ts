@@ -6,8 +6,9 @@ import type {
   EmailResult,
   MagicLinkEmailParams,
   InvitationEmailParams,
+  RewardEmailParams,
 } from "./types";
-import { magicLinkTemplate, invitationTemplate } from "./templates";
+import { magicLinkTemplate, invitationTemplate, rewardTemplate } from "./templates";
 
 class EmailService {
   private resend: Resend | null = null;
@@ -155,6 +156,16 @@ class EmailService {
     return this.send({
       to: params.email,
       subject: "You've been invited to join a project on RefRef",
+      html,
+    });
+  }
+
+  async sendReward(params: RewardEmailParams): Promise<EmailResult> {
+    const html = rewardTemplate(params);
+
+    return this.send({
+      to: params.email,
+      subject: `You've earned ${params.amount} sats from ${params.storeName}!`,
       html,
     });
   }

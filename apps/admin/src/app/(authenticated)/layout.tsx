@@ -7,6 +7,9 @@ export default async function MainLayout({
 }: {
   children: React.ReactNode;
 }) {
+  // Temporarily disable authentication for MVP testing
+  // TODO: Re-enable authentication in production
+  /*
   const session = await auth.api.getSession({
     headers: await headers(),
   });
@@ -15,6 +18,7 @@ export default async function MainLayout({
   if (!session) {
     redirect("/auth/sign-in");
   }
+  */
 
   return <>{children}</>;
 }

@@ -21,12 +21,14 @@
   "dependencies": {
     "@paralleldrive/cuid2": "^2.2.2",
     "@refref/types": "workspace:*",
+    "better-sqlite3": "^12.0.0",
     "drizzle-orm": "^0.33.0",
     "postgres": "^3.4.5",
     "zod": "^4.0.17"
   },
   "devDependencies": {
     "@refref/typescript-config": "workspace:*",
+    "@types/better-sqlite3": "^7.6.13",
     "@types/node": "^24.3.0",
     "drizzle-kit": "^0.24.0",
     "tsx": "^4.19.2",
