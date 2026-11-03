@@ -90,6 +90,6 @@
     "tailwind-merge": "^3.0.2",
     "tw-animate-css": "^1.2.4",
     "vaul": "^1.1.2",
-    "zod": "^4.0.17"
+    "zod": "^4.6.6"
   }
 }
